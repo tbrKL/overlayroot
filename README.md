@@ -25,10 +25,11 @@ copy the following files
 
 - hooks-overlay to /etc/initramfs-tools/hooks/
 - init-bottom-overlay to /etc/initramfs-tools/scripts/init-bottom/
+- do not forget to make them excuteable via `chmod +x filename`
 
 then rerun
 
-`initramfs -o /boot/init.gz`
+`mkinitramfs -o /boot/init.gz`
 
 add to .bashrc
 
@@ -44,3 +45,4 @@ I put it in ~/bin and add ~/bin to my path
 there are comments in some of the files you might want to read
 and that's about it.
 
+To prevent changes, I also modify the `/etc/fstab`, setting the mount option to `ro` for `/boot` and `/`.
